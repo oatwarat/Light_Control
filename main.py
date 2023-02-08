@@ -83,10 +83,12 @@ def update_sensor_brightness(name: int):
         collection.update_one({"name": name}, {"$set": {"brightness": 0}})
     return
 
-@app.get("/getdata")
-def getdata():
-    #result =
-    #for i in collection.find({}):
-
-
-    #return result
+@app.get("/getdata/{name}")
+def getdata(name: int):
+    result = collection.find_one({"name": name})
+    return {"name": result["name"],
+            "mode": result["mode"],
+            "brightness": result["brightness"],
+            "sensor_status": result["sensor_status"],
+            "is_on": result["is_on"]
+            }
