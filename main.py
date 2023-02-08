@@ -15,6 +15,8 @@ COLLECTION_NAME = "light"
 MONGO_DB_URL = f"mongodb://{usrn}:{pswd}@mongo.exceed19.online:8443/?authMechanism=DEFAULT"
 MONGO_DB_PORT = 8443
 
+print(usrn)
+
 
 class Management(BaseModel):
     name: int
