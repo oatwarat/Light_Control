@@ -8,7 +8,7 @@ const Home = () => {
         
         <div className='container'>
             <div>
-                <Button />
+                <Button name='Login' func='login' />
             </div>
             <div className='welcome'>
                 <h1>Welcome Home,</h1>
