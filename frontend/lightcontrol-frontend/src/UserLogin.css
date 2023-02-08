@@ -1,0 +1,67 @@
+.user-form-container {
+    width: 50%;
+    padding: 5rem;
+    margin-top: 3rem;
+    margin-left: 2rem;
+    /* margin-right: 0.5rem; */
+    position: absolute;
+    top: 0%;
+    right: 0%;
+}
+
+.user-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.form-1-field {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.form-1-field > label {
+    padding: .15rem;
+    min-width: 7rem;
+}
+
+.form-2-field {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.form-2-field > label {
+    padding: .10rem;
+    min-width: 7rem;
+}
+
+.form-3-field {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.form-3-field > label {
+    padding: .10rem;
+    min-width: 7rem;
+}
+
+.name-field {
+    border: black solid;
+    border-radius: .5rem;
+}
+
+.password-field {
+    border: black solid;
+    border-radius: .5rem;
+}
+
+.email-field {
+    border: black solid;
+    border-radius: .5rem;
+}
+
