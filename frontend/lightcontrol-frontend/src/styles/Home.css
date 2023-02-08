@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+.container {
+    font-family: 'Playfair Display', serif;
+    display: flex;
+    align-items: flex-start;
+}
+
+.login-form {
+    margin-top: 0;
+    margin-right: 6rem;
+    position: absolute;
+    top: 0%;
+    right: 0%;
+}
+
+.welcome {
+    text-align: left;
+}
+
+.welcome h1 {
+    font-size: 5rem;
+}
+
+.welcome h2 {
+    font-size: 3rem;
+    font-weight: lighter;
+}
+
+.card-sample {
+    margin-left: 13rem;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 30%;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+                    "col1 col2" 
+                    "col3 col4";
+}
+
+.bedroom {
+    width: 300px;
+    height: 300px;
+    background-color: rgba(245, 245, 245, 0.602);
+    margin-bottom: 2rem;
+    grid-area: col1;
+}
+
+.kitchen {
+    width: 300px;
+    height: 300px;
+    background-color: rgba(245, 245, 245, 0.602);
+    margin-bottom: 2rem;
+    grid-area: col2;
+}
+
+.livingroom {
+    width: 300px;
+    height: 300px;
+    background-color: rgba(245, 245, 245, 0.602);
+    margin-bottom: 2rem;
+    grid-area: col3;
+}
+
+.bathroom {
+    width: 300px;
+    height: 300px;
+    background-color: rgba(245, 245, 245, 0.602);
+    margin-bottom: 2rem;
+    grid-area: col4;
+}
+
+@media only screen and (max-width: 640px) {
+    .columns {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: none;
+    }
+}
