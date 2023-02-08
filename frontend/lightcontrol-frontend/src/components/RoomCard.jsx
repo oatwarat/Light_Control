@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 // import { Link } from 'react-router-dom'
 import '../styles/RoomCard.css'
 // import defaultIcon from '../assets/default.png' // Default Icon
 
-const Card = ({roomName,Brightness=0}) => {
+const Card = ({roomName}) => {
 
 	const [Status, setStatus] = useState("Mannual")
 
@@ -29,10 +29,20 @@ const Card = ({roomName,Brightness=0}) => {
 		}
 	}
 
+	const RoomId = (roomName) => {
+		if (roomName == "Living Room") {
+			return 1
+		} else if (roomName == "Bed Room") {
+			return 2
+		} else if (roomName == "Kitchen") {
+			return 3
+		}
+	}
+
 	const BrightnessValue = useState("")
-	let color = getCardColorClass({Status,Brightness})
 
 	const handleSubmit = (e) => {
+		setBrightness(inputRef.current.value)
 		e.preventDefault()
 		const ressult = {
 			roomName,
@@ -40,16 +50,26 @@ const Card = ({roomName,Brightness=0}) => {
 			Brightness : BrightnessValue
 		}
 		const data = ressult.json()
-		fetch('http://localhost:5000/api/room',
+		const Roomid = RoomId(roomName)
+		const url = "http://group12.exceed19.online/"
+		fetch(url+Roomid,
 		{
 			method: 'POST',
 			body: data
 		}
-		).then((res) => console.log("Hi"))
+		).then((res) => console.log("Information sent"))
 
 	}
 
 	// const routeName = `/${category}/${id}`
+	const inputRef = useRef(null)
+	const [Brightness, setBrightness] = useState()
+
+	const handleClick = () => {
+		setBrightness(inputRef.current.value)
+	}
+
+	let color = getCardColorClass({Status,Brightness})
 
 	return (
 		<div className='card-container'>
@@ -59,7 +79,7 @@ const Card = ({roomName,Brightness=0}) => {
 					<h4><b>{roomName}</b> <button className = {color} onClick={StatusSwtich}>{Status}</button></h4>
 				</div>
 				<div className='input-brightness'></div>
-                <input onChange = {e => BrightnessValue}/>
+                <input type="text" ref={inputRef}/>
 				<button className = "Brightness" onClick={handleSubmit}>change level</button>
 			</div>
 		</div>
