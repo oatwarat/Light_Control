@@ -33,3 +33,19 @@ collection = db[COLLECTION_NAME]
 app = FastAPI()
 
 
+
+
+@app.put("/update/mode/{name}/{mode}")
+def update_mode(name: str = "", mode: str = "manual(hardware)"):
+    collection.update_one({"name":name},{"$set":{"mode":mode}})
+    return name + " is in mode " + mode
+
+@app.put("/update/brightness/{name}/{brightness}")
+def update_brightness(name: str = "", brightness: int = 0):
+    collection.update_one({"name":name},{"$set":{"brightness":brightness}})
+    return name + " has brightness level " + str(brightness)
+
+@app.put("/update/threshold/{name}/{threshold}")
+def update_threshold(name: str = "", threshold: int = 255):
+    collection.update_one({"name":name},{"$set":{"threshold":threshold}})
+    return name + " has threshold level " + str(threshold)
