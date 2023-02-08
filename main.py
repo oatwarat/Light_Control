@@ -82,3 +82,11 @@ def update_sensor_brightness(name: int):
     elif result["sensor_status"] >= threshold and result["mode"] == 0:
         collection.update_one({"name": name}, {"$set": {"brightness": 0}})
     return
+
+@app.get("/getdata")
+def getdata():
+    #result =
+    #for i in collection.find({}):
+
+
+    #return result
