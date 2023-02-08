@@ -19,6 +19,7 @@ const Home = () => {
                 <div className='bedroom'></div>
                 <div className='kitchen'></div>
                 <div className='livingroom'></div>
+                <div className='bathroom'></div>
             </div>
 
         </div>
