@@ -94,3 +94,14 @@
     cursor: pointer;
   }
   
+  .MannualWeb{
+    background-color: #55947d;
+  }
+
+  .MannualPhys{
+    background-color: #126043;
+  }
+
+  .Auto{
+    background-color: #14c9ba;
+  }
