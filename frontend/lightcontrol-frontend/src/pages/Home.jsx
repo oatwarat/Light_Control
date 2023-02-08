@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import AddRoom from '../components/AddRoom'
 import Button from '../components/Button'
 import '../styles/Home.css'
 
@@ -8,7 +9,7 @@ const Home = () => {
         
         <div className='container'>
             <div>
-                <Button />
+            <Button name='Login' func='login' />
             </div>
             <div className='welcome'>
                 <h1>Welcome Home,</h1>
@@ -19,6 +20,7 @@ const Home = () => {
                 <div className='bedroom'></div>
                 <div className='kitchen'></div>
                 <div className='livingroom'></div>
+                <AddRoom />
             </div>
 
         </div>

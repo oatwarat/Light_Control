@@ -5,7 +5,7 @@
     align-items: flex-start;
 }
 
-.button-login {
+#login {
     margin-top: 2rem;
     margin-right: 2rem;
     position: absolute;
@@ -28,7 +28,10 @@
 }
 
 .card-sample {
+    align-items: center;
     margin-left: 13rem;
+    padding: 2rem 2rem;
+    border: 2px solid black;
 }
 
 .bedroom {
@@ -49,4 +52,16 @@
     width: 300px;
     height: 300px;
     background-color: rgba(245, 245, 245, 0.602);
+}
+
+#add-room {
+    width: 10rem;
+    position: absolute;
+    margin-top: 2rem;
+}
+
+#add-room:hover {
+    background-color: rgb(116, 66, 16);
+    color: rgb(255, 255, 255);
+    cursor: pointer;
 }

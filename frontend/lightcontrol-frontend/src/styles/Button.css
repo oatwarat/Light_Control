@@ -1,4 +1,4 @@
-.button-login {
+.button {
     color: white;
     font-size: 1.6rem;
     background-color: black;
@@ -9,8 +9,8 @@
     height: 3.5rem;
 }
 
-.button-login:hover {
+.button:hover {
     background-color: white;
     color: black;
     cursor: pointer;
-  }
+}
