@@ -5,9 +5,9 @@
     align-items: flex-start;
 }
 
-#login {
-    margin-top: 2rem;
-    margin-right: 2rem;
+.login-form {
+    margin-top: 0;
+    margin-right: 6rem;
     position: absolute;
     top: 0%;
     right: 0%;
@@ -15,7 +15,6 @@
 
 .welcome {
     text-align: left;
-    line-height: 0;
 }
 
 .welcome h1 {

@@ -1,30 +1,37 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import '../styles/UserLogin.css'
 import Button from './Button'
 
-const UserLogin = () => {
-    const [name, setName] = useState("")
-    const [pp, setPp] = useState("")
-    const [email, setEmail] = useState("")
+const UserLogin = ({setName,setPp,setEmail}) => {
+
+    const id_user = useRef()
+    const ppp = useRef()
+    const email = useRef()
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        const result = {
-            name: name,
-            pp: pp
-,
-            email:email
-        }
-        await addPlace(result)
+        console.log(id_user.current.value)
+        setName(id_user.current.value)
+        // // const result = {
+        // //     name: name,
+        // //     pp: pp,
+        // //     email:email
+        // // }
+        // // getName(name)
+        // setName()
     }
 
     return (
-        <div className="user-form-container">
-            <form className="user-form" onSubmit={handleSubmit}>
-                <NameFormField value={name} onChange={(e => setName(e.target.value))} />
-                <PPFormField value={password} onChange={(e) => setPp(e.target.value)} />
-                <EmailFormField value={email} onChange={(e) => setEmail(e.target.value)} />
-                <Button name="LogIn" type="submit" />
+        <div className="user-form-container" onSubmit={handleSubmit}>
+            <form className="user-form" >
+                {/* <NameFormField ref={id_user} /> */}
+                <div className="form-1-field">
+                    <label><h4> Name:</h4></label>
+                    <input className="name-field" type="text" ref={id_user} />
+                </div>
+                <PPFormField  ref={ppp}/>
+                <EmailFormField  ref={email}/>
+                <Button name="LogIn" type="submit" id="login-ready"/>
             </form>
         </div>
     )
