@@ -7,8 +7,8 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <Card/>
+    <Card roomName='Livii'/>
   )
-}
+  }
 
-export default App
+  export default App

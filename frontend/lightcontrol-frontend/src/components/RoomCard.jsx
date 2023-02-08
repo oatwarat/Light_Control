@@ -3,9 +3,9 @@ import React, { useEffect, useState } from 'react'
 import '../styles/RoomCard.css'
 // import defaultIcon from '../assets/default.png' // Default Icon
 
-const Card = ({roomName,Status="Mannual",Brightness=0}) => {
+const Card = ({roomName,Brightness=0}) => {
 
-	// const []
+	const [Status, setStatus] = useState("Mannual")
 
 	const getCardColorClass = ({Status,Brightness}) => {
         if ((Status == "Mannual" || Status == "Auto") && Brightness == 0) {
@@ -17,19 +17,20 @@ const Card = ({roomName,Status="Mannual",Brightness=0}) => {
         }
 	}
 
-	const StatusSwtich = (Status) => {
+	const StatusSwtich = () => {
 		if (Status == "Mannual") {
-			Status = "Auto"
+			setStatus("Auto")
 		} else if (Status == "Auto") {
-			Status = "MannualPhys"
+			setStatus("MannualPhys")
 		} else if (Status == "MannualPhys"){
-			Status = "MannualWeb"
+			setStatus("MannualWeb")
 		} else if (Status == "MannualWeb"){
-			Status = "Mannual"
+			setStatus("Mannual")
 		}
 	}
 
 	const BrightnessValue = useState("")
+	let color = getCardColorClass({Status,Brightness})
 
 	const handleSubmit = (e) => {
 		e.preventDefault()
@@ -51,10 +52,13 @@ const Card = ({roomName,Status="Mannual",Brightness=0}) => {
 	// const routeName = `/${category}/${id}`
 
 	return (
-		<div>
+		<div className='card-container'>
 			{/* <div className={`${getCardColorClass(Status,Brightness)}`}> */}
-			<div>
-      			<h4><b>roomName</b><button className = {Status} onClick={StatusSwtich}>Status</button></h4>
+			<div className='room-controller'>
+				<div className='name-status'>
+					<h4><b>{roomName}</b> <button className = {color} onClick={StatusSwtich}>{Status}</button></h4>
+				</div>
+				<div className='input-brightness'></div>
                 <input onChange = {e => BrightnessValue}/>
 				<button className = "Brightness" onClick={handleSubmit}>change level</button>
 			</div>

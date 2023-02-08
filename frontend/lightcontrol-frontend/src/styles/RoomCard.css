@@ -1,13 +1,25 @@
+.card-container {
+    border: 2px solid #4b1d05;
+    border-radius: 5%;
+}
+
+.name-status {
+    display: flex;
+    align-items: center;
+}
+
+.name-status button{
+    margin-left: 14rem;
+}
+
+.input-brightness {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
 .OffCardColor {
-    /* Add shadows to create the "card" effect */
-    width: 200px;
-    padding : 10px;
-    background-color: rgb(56, 56, 56);
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
-    border-radius: 5px;
-  }
-  .OffCardColor:hover{
+    /* Add shadows to cre8ate the "card" effect */
     box-shadow: 0 8px 16px 0 rgba(255, 255, 255, 0.2);
   }
 
@@ -15,7 +27,7 @@
     /* Add shadows to create the "card" effect */
     width: 200px;
     padding : 10px;
-    background-color: rgb(86, 255, 199);
+    background-color: rgb(208, 214, 212);
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     border-radius: 5px;
@@ -28,7 +40,7 @@
     /* Add shadows to create the "card" effect */
     width: 200px;
     padding : 10px;
-    background-color: rgb(23, 216, 204);
+    background-color: rgb(36, 219, 158);
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     border-radius: 5px;
